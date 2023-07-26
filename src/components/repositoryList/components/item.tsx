@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Grid, Typography } from "@mui/material";
-import { IFavoriteItem, IItems } from "../types.ts";
+import { IFavoriteItem, IItems } from "../../../types.ts";
 
 interface IItemComponent {
   item: IItems;

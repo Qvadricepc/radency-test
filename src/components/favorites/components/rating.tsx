@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-import { IFavoriteItem } from "../types.ts";
+import { IFavoriteItem } from "../../../types.ts";
 
 interface IRating {
   item: IFavoriteItem;

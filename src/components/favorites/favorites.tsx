@@ -1,8 +1,8 @@
 import { Grid } from "@mui/material";
-import { keyLocalStorage } from "../shared.ts";
-import { FavoritesItem } from "./favoritesItems.tsx";
-import { useLocalStorage } from "../hooks/useLocalStorage.tsx";
-import { IFavoriteItem, IItems } from "../types.ts";
+import { keyLocalStorage } from "../../shared.ts";
+import { FavoritesItem } from "./components/favoritesItems.tsx";
+import { useLocalStorage } from "../../hooks/useLocalStorage.tsx";
+import { IFavoriteItem, IItems } from "../../types.ts";
 
 export const Favorites = () => {
   const { data: list, setLocalStorageData } = useLocalStorage(keyLocalStorage);
@@ -13,12 +13,10 @@ export const Favorites = () => {
   };
 
   const handleRating = (itemId: number, newRating: number) => {
-    // Find the item in the list by ID
     const updatedList = list.map((item: IFavoriteItem) =>
       item.id === itemId ? { ...item, rating: newRating } : item,
     );
 
-    // Update the list in local storage
     setLocalStorageData(updatedList);
   };
 

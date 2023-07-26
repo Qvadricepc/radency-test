@@ -1,6 +1,6 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { CustomRating } from "./rating.tsx";
-import { IFavoriteItem } from "../types.ts";
+import { IFavoriteItem } from "../../../types.ts";
 
 interface IFavoritesItemComponent {
   item: IFavoriteItem;

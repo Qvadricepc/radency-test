@@ -2,8 +2,8 @@ import * as React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-import { IRepoList, RepoList } from "./repoList.tsx";
-import { Favorites } from "./favorites.tsx";
+import { IRepoList, RepoList } from "./repositoryList/repoList.tsx";
+import { Favorites } from "./favorites/favorites.tsx";
 
 interface TabPanelProps {
   children?: React.ReactNode;

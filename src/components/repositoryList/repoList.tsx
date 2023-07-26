@@ -1,9 +1,9 @@
 import React from "react";
 import { CircularProgress, Grid } from "@mui/material";
-import { Item } from "./item.tsx";
-import { useLocalStorage } from "../hooks/useLocalStorage.tsx";
-import { keyLocalStorage } from "../shared.ts";
-import { IFavoriteItem, IItems } from "../types.ts";
+import { Item } from "./components/item.tsx";
+import { useLocalStorage } from "../../hooks/useLocalStorage.tsx";
+import { keyLocalStorage } from "../../shared.ts";
+import { IFavoriteItem, IItems } from "../../types.ts";
 
 export interface IRepoList {
   data: IItems[] | undefined;
