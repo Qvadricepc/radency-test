@@ -12,6 +12,16 @@ export const Favorites = () => {
     setLocalStorageData(updatedList);
   };
 
+  const handleRating = (itemId: number, newRating: number) => {
+    // Find the item in the list by ID
+    const updatedList = list.map((item: IFavoriteItem) =>
+      item.id === itemId ? { ...item, rating: newRating } : item,
+    );
+
+    // Update the list in local storage
+    setLocalStorageData(updatedList);
+  };
+
   return (
     <Grid
       sx={{
@@ -25,10 +35,9 @@ export const Favorites = () => {
       {list?.map((item: IFavoriteItem) => (
         <FavoritesItem
           key={item.id}
-          name={item.name}
-          id={item.id}
-          rating={item.rating}
+          item={item}
           handleDelete={handleRemoveFromFavorites}
+          handleRating={handleRating}
         />
       ))}
     </Grid>

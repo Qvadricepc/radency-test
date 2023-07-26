@@ -1,18 +1,17 @@
 import { Button, Grid, Typography } from "@mui/material";
 import { CustomRating } from "./rating.tsx";
+import { IFavoriteItem } from "../types.ts";
 
-interface IFavoritesItem {
-  name: string;
-  id: number;
-  rating: number;
+interface IFavoritesItemComponent {
+  item: IFavoriteItem;
   handleDelete: (itemId: number) => void;
+  handleRating: (itemId: number, newRating: number) => void;
 }
 
-export const FavoritesItem: React.FC<IFavoritesItem> = ({
-  name,
-  id,
-  rating,
+export const FavoritesItem: React.FC<IFavoritesItemComponent> = ({
+  item,
   handleDelete,
+  handleRating,
 }) => {
   return (
     <Grid
@@ -27,13 +26,13 @@ export const FavoritesItem: React.FC<IFavoritesItem> = ({
         variant="h6"
         sx={{ color: "blue", width: "300px", textAlign: "center" }}
       >
-        {name}
+        {item.name}
       </Typography>
-      <CustomRating id={id} rating={rating} />
+      <CustomRating item={item} handleRating={handleRating} />
       <Button
         variant="contained"
         color="error"
-        onClick={() => handleDelete(id)}
+        onClick={() => handleDelete(item.id)}
       >
         Delete
       </Button>
