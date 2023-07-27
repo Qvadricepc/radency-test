@@ -1,6 +1,8 @@
+// You can add needed fields from the response
 export interface IItems {
   name: string;
   git_url: string;
+  clone_url?: string;
   id: number;
 }
 

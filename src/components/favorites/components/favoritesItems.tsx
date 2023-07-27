@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Link, Typography } from "@mui/material";
 import { CustomRating } from "./rating.tsx";
 import { IFavoriteItem } from "../../../types.ts";
 
@@ -22,12 +22,15 @@ export const FavoritesItem: React.FC<IFavoritesItemComponent> = ({
       }}
     >
       <Typography variant="h6">Repository name:</Typography>
-      <Typography
-        variant="h6"
-        sx={{ color: "blue", width: "300px", textAlign: "center" }}
-      >
-        {item.name}
-      </Typography>
+      <Link href={item.clone_url} target="blank">
+        <Typography
+          variant="h6"
+          sx={{ color: "blue", width: "300px", textAlign: "center" }}
+        >
+          {item.name}
+        </Typography>
+      </Link>
+
       <CustomRating item={item} handleRating={handleRating} />
       <Button
         variant="contained"

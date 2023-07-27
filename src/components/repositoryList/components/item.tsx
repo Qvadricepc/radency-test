@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Grid, Typography } from "@mui/material";
+import { Button, Grid, Link, Typography } from "@mui/material";
 import { IFavoriteItem, IItems } from "../../../types.ts";
 
 interface IItemComponent {
@@ -19,6 +19,7 @@ export const Item: React.FC<IItemComponent> = ({
       id: item.id,
       name: item.name,
       git_url: item.git_url,
+      clone_url: item.clone_url,
       rating: 0,
     });
   };
@@ -32,12 +33,14 @@ export const Item: React.FC<IItemComponent> = ({
       }}
     >
       <Typography variant="h6">Repository name:</Typography>
-      <Typography
-        variant="h6"
-        sx={{ color: "blue", width: "300px", textAlign: "center" }}
-      >
-        {item.name}
-      </Typography>
+      <Link href={item.clone_url} target="blank">
+        <Typography
+          variant="h6"
+          sx={{ color: "blue", width: "300px", textAlign: "center" }}
+        >
+          {item.name}
+        </Typography>
+      </Link>
       <Button
         disabled={isFavorite}
         variant="contained"
