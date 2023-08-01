@@ -1,9 +1,9 @@
 import { Button, Grid, Link, Typography } from "@mui/material";
 import { CustomRating } from "./rating.tsx";
-import { IFavoriteItem } from "../../../types.ts";
+import { FavRepository } from "../../../shared.ts";
 
 interface IFavoritesItemComponent {
-  item: IFavoriteItem;
+  item: FavRepository;
   handleDelete: (itemId: number) => void;
   handleRating: (itemId: number, newRating: number) => void;
 }
@@ -22,7 +22,7 @@ export const FavoritesItem: React.FC<IFavoritesItemComponent> = ({
       }}
     >
       <Typography variant="h6">Repository name:</Typography>
-      <Link href={item.clone_url} target="blank">
+      <Link href={item.url} target="blank">
         <Typography
           variant="h6"
           sx={{ color: "blue", width: "300px", textAlign: "center" }}
