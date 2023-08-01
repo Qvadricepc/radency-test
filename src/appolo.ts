@@ -1,8 +1,8 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GITHUB_ACCESS_TOKEN } from "./const.ts";
 
 const GITHUB_GRAPHQL_API_ENDPOINT = "https://api.github.com/graphql";
-const GITHUB_TOKEN =
-  "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"; // Replace this with your own token
+const GITHUB_TOKEN = GITHUB_ACCESS_TOKEN;
 
 export const client = new ApolloClient({
   uri: GITHUB_GRAPHQL_API_ENDPOINT,
