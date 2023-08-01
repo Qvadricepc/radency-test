@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Grid, Link, Typography } from "@mui/material";
-import { IFavoriteItem, IItems } from "../../../types.ts";
+import { FavRepository, Repository } from "../../../shared.ts";
 
 interface IItemComponent {
-  item: IItems;
-  onToggle: (item: IFavoriteItem) => void;
+  item: Repository;
+  onToggle: (item: FavRepository) => void;
   isFavorite: boolean;
 }
 
@@ -18,8 +18,7 @@ export const Item: React.FC<IItemComponent> = ({
     onToggle({
       id: item.id,
       name: item.name,
-      git_url: item.git_url,
-      clone_url: item.clone_url,
+      url: item.url,
       rating: 0,
     });
   };
@@ -33,7 +32,7 @@ export const Item: React.FC<IItemComponent> = ({
       }}
     >
       <Typography variant="h6">Repository name:</Typography>
-      <Link href={item.clone_url} target="blank">
+      <Link href={item.url} target="blank">
         <Typography
           variant="h6"
           sx={{ color: "blue", width: "300px", textAlign: "center" }}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IFavoriteItem } from "../types.ts";
+import { FavRepository } from "../shared.ts";
 
 export const useLocalStorage = (key: string) => {
   const [data, setData] = useState(() => {
@@ -7,7 +7,7 @@ export const useLocalStorage = (key: string) => {
     return storedData ? JSON.parse(storedData) : [];
   });
 
-  const setLocalStorageData = (newData: IFavoriteItem) => {
+  const setLocalStorageData = (newData: FavRepository) => {
     setData(newData);
     localStorage.setItem(key, JSON.stringify(newData));
   };
